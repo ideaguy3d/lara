@@ -1,0 +1,6 @@
+**/vendor
+**/settings.yml
+build/*
+config/settings.yml
+app.yaml
+.idea
