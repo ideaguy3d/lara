@@ -86,7 +86,14 @@ class Sql implements DataModelInterface
 
     public function addMoreMajideData() {
         $pdo = $this->newConnection();
+    }
 
+    public function pdoPracticeOne() {
+        $pdo = $this->newConnection();
+        $statement = $pdo->prepare("SELECT * FROM tasks");
+        $statement->execute();
+        $rset = $statement->fetchAll(PDO::FETCH_OBJ);
+        return $rset;
     }
 
     public function listBooks($limit = 10, $cursor = null) {

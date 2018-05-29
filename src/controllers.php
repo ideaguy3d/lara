@@ -139,3 +139,16 @@ $app->get('/majide', function(Request $request) use ($app) {
     $twig = $app['twig'];
     return $twig->render('majide.html.twig');
 });
+
+$app->get('/prac', function(Request $request) use ($app) {
+    $model = $app['bookshelf.model'];
+    $twig = $app['twig'];
+    $results = $model->pdoPracticeOne();
+
+    // output result
+    echo "<br><br>";
+    var_dump($results[0]->task_one);
+    echo "<br><br>";
+
+    return $twig->render('prac.html.twig');
+});
